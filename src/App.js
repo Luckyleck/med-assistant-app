@@ -1,9 +1,10 @@
+import AudioCapture from './components/AudioCapture';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      This is the app
+    <div className="main">
+      <AudioCapture />
     </div>
   );
 }
