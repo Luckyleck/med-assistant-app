@@ -1,70 +1,66 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Audio Medical Assistant
 
-## Available Scripts
+The Audio Medical Assistant is a React application designed to capture audio input from a user, transcribe it, detect questions, and provide suggested answers based on a knowledge file. It leverages OpenAI for question extrapolation and answer suggestion.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+Follow these instructions to set up and run the project on your local machine.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Make sure you have the following installed:
+- [Node.js and npm](https://nodejs.org/en/download/)
+- [VS Code](https://code.visualstudio.com/)
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Luckyleck/med-assistant-app.git
+   ```
 
-### `npm run build`
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd med-assistant-app
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Open the Project in VS Code**:
+   ```bash
+   code .
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Set Up OpenAI API Key
 
-### `npm run eject`
+To use OpenAI's API, you will need an API key.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Go to [OpenAI API keys](https://platform.openai.com/api-keys) and sign up or log in to get your API key.
+2. In the project directory, locate the `.env.example` file.
+3. Open `.env.example` and paste your API key where indicated:
+   ```env
+   REACT_APP_OPENAI_API_KEY=PASTE_YOUR_KEY_HERE
+   ```
+4. Rename the file `.env.example` to `.env`:  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the Project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Once the setup is complete, start the development server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run start
+```
 
-## Learn More
+The application will open in your default browser, and you can begin using the Audio Medical Assistant.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+With the app running, you can record audio, transcribe, detect questions, and view suggested answers based on a knowledge file.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy coding!
