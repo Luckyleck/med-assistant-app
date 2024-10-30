@@ -43,7 +43,6 @@ const AudioCapture = () => {
         resetStates();
         setError('');
         hasNewSpeech.current = false; // Reset the speech detection flag
-        console.log('Recording started.');
 
         if (recognition.current) {
             recognition.current.start();
@@ -67,7 +66,6 @@ const AudioCapture = () => {
                         }
                         return prevTranscript + finalTranscript + ' ';
                     });
-                    console.log('Updated transcript:', finalTranscript);
                 }
             };
 
@@ -79,7 +77,6 @@ const AudioCapture = () => {
     };
 
     const stopRecording = async () => {
-        console.log('Stopping recording.');
         setIsRecording(false);
 
         if (recognition.current) {
@@ -93,12 +90,10 @@ const AudioCapture = () => {
                     return;
                 }
 
-                console.log('Final Transcript after stopping:', transcript);
                 setIsLoading({detectedQuestion: true});
 
                 // Step 1: Extract question from transcript
                 const question = await fetchOpenAIResponse(transcript.trim());
-                console.log('Detected question from OpenAI:', question);
                 
                 // Step 2: Fetch the knowledge file from Firebase
                 if (question) {
@@ -110,10 +105,7 @@ const AudioCapture = () => {
                         const url = await getDownloadURL(fileRef);
                         const response = await fetch(url, { mode: 'no-cors' });
                         const knowledgeText = await response.text();
-                        console.log(
-                            'Fetched knowledge text from Firebase:',
-                            knowledgeText
-                        );
+
                         setIsLoading({detectedQuestion: false})
                         setDetectedQuestion(question);
                         setIsLoading({suggestedAnswer: true});
@@ -136,7 +128,6 @@ const AudioCapture = () => {
                 }
             };
             recognition.current.stop();
-            console.log('Recognition stopped');
         }
     };
 
